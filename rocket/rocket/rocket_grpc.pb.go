@@ -33,7 +33,7 @@ func NewRocketServiceClient(cc grpc.ClientConnInterface) RocketServiceClient {
 
 func (c *rocketServiceClient) GetRocket(ctx context.Context, in *GetRocketRequest, opts ...grpc.CallOption) (*GetRocketResponse, error) {
 	out := new(GetRocketResponse)
-	err := c.cc.Invoke(ctx, "/rocket.RocketService/GetRocket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/RocketService/GetRocket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -42,7 +42,7 @@ func (c *rocketServiceClient) GetRocket(ctx context.Context, in *GetRocketReques
 
 func (c *rocketServiceClient) AddRocket(ctx context.Context, in *AddRocketRequest, opts ...grpc.CallOption) (*AddRocketResponse, error) {
 	out := new(AddRocketResponse)
-	err := c.cc.Invoke(ctx, "/rocket.RocketService/AddRocket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/RocketService/AddRocket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -51,7 +51,7 @@ func (c *rocketServiceClient) AddRocket(ctx context.Context, in *AddRocketReques
 
 func (c *rocketServiceClient) DeleteRocket(ctx context.Context, in *DeleteRocketRequest, opts ...grpc.CallOption) (*DeleteRocketResponse, error) {
 	out := new(DeleteRocketResponse)
-	err := c.cc.Invoke(ctx, "/rocket.RocketService/DeleteRocket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/RocketService/DeleteRocket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -104,7 +104,7 @@ func _RocketService_GetRocket_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/rocket.RocketService/GetRocket",
+		FullMethod: "/RocketService/GetRocket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RocketServiceServer).GetRocket(ctx, req.(*GetRocketRequest))
@@ -122,7 +122,7 @@ func _RocketService_AddRocket_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/rocket.RocketService/AddRocket",
+		FullMethod: "/RocketService/AddRocket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RocketServiceServer).AddRocket(ctx, req.(*AddRocketRequest))
@@ -140,7 +140,7 @@ func _RocketService_DeleteRocket_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/rocket.RocketService/DeleteRocket",
+		FullMethod: "/RocketService/DeleteRocket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RocketServiceServer).DeleteRocket(ctx, req.(*DeleteRocketRequest))
@@ -152,7 +152,7 @@ func _RocketService_DeleteRocket_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RocketService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "rocket.RocketService",
+	ServiceName: "RocketService",
 	HandlerType: (*RocketServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

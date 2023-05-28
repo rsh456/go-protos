@@ -1,20 +1,15 @@
 syntax = "proto3";
 
-package rocket;
+option go_package="github.com/rsh456/go-protos/rocket/v1/rocket";
 
-option go_package="/rocket";
 message Rocket{
     string id = 1;
     string name = 2;
     string type = 3;
 }
 
-service RocketService{
-    rpc GetRocket(GetRocketRequest) returns (GetRocketResponse);
-    rpc AddRocket(AddRocketRequest)returns (AddRocketResponse);
-    rpc DeleteRocket(DeleteRocketRequest) returns (DeleteRocketResponse);
-}
 
+// -- Get Rocket Message Types ---
 message GetRocketRequest{
     string id = 1;
 }
@@ -39,4 +34,10 @@ message DeleteRocketRequest{
 
 message DeleteRocketResponse{
     string status = 1;
+}
+
+service RocketService{
+    rpc GetRocket (GetRocketRequest) returns (GetRocketResponse);
+    rpc AddRocket (AddRocketRequest) returns (AddRocketResponse);
+    rpc DeleteRocket (DeleteRocketRequest) returns (DeleteRocketResponse);
 }
