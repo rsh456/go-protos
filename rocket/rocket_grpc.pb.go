@@ -169,5 +169,5 @@ var RocketService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "rocket/v1/rocket.proto",
+	Metadata: "v1/rocket.proto",
 }
