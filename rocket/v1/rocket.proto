@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package rocket;
+
 option go_package="github.com/rsh456/go-protos/rocket/v1/rocket";
 
 message Rocket{
